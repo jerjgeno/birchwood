@@ -6,7 +6,6 @@ router.get('/', function(req, res, next) {
   res.render('index', { 
     title: 'Birchwood',
     subtitle: 'Digital Media Agency', 
-
   });
 });
 
