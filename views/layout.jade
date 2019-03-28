@@ -4,20 +4,23 @@ html(lang="en")
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.8.1/css/all.css', integrity='sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf', crossorigin='anonymous')
+    meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
     script(type="text/javascript", src="/javascripts/nav.js")
   body
       block nav
         #sidenav.sidenav
-          a(href="https://johnbrz.com") Home 
-          a(href="https://johnbrz.com") Web Portfolio 
-          a(href="https://johnbrz.com") Audio Portfolio
-          a(href="https://johnbrz.com") Video Portfolio
-          a(href="https://johnbrz.com") About Birchwood
-          a(href="https://johnbrz.com") Contact Us
+          i.fas.fa-times#nav-close-icon(onClick="closeNav()")
+          a(href="https://johnbrz.com") Home
+          a(href="https://johnbrz.com") Web Applications
+          a(href="https://johnbrz.com") Audio &amp; Music
+          a(href="https://johnbrz.com") Video
+          a(href="https://johnbrz.com") Contact John
       block container
         #main
           #nav-icon-container
             i.fas.fa-bars#nav-open-icon(onClick="openNav()")
-            i.fas.fa-times#nav-close-icon(onClick="closeNav()",style="display:none")
+          #header
+            h1#maintitle johnbrz
+            h2#subtitle Digital Media &amp; Design
           #content
             block content
