@@ -1,26 +1,25 @@
 doctype html
 html(lang="en")
   head
-    title= title
+    if title == null 
+      title JohnBRZ - Digital Media &amp; Design
+    else
+      title= title 
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.8.1/css/all.css', integrity='sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf', crossorigin='anonymous')
     meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
     script(type="text/javascript", src="/javascripts/nav.js")
   body
-      block nav
-        #sidenav.sidenav
-          i.fas.fa-times#nav-close-icon(onClick="closeNav()")
-          a(href="https://johnbrz.com") Home
-          a(href="https://johnbrz.com") Web Applications
-          a(href="https://johnbrz.com") Audio &amp; Music
-          a(href="https://johnbrz.com") Video
-          a(href="https://johnbrz.com") Contact John
-      block container
-        #main
-          #nav-icon-container
-            i.fas.fa-bars#nav-open-icon(onClick="openNav()")
-          #header
-            h1#maintitle johnbrz
-            h2#subtitle Digital Media &amp; Design
-          #content
-            block content
+    block nav
+      include ./nav.jade
+    block container
+      #main
+        #nav-icon-container
+          i.fas.fa-bars#nav-open-icon(onClick="openNav()")
+        #header
+          span#maintitle johnbrz
+          span#subtitle Digital Media &amp; Design
+        #content
+          block content
+    block footer
+      include ./footer.jade
